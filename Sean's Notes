@@ -1,0 +1,54 @@
+Sean’s testing notes:
+
+Scope of Testing
+In:
+
+* 		Example framework: Java Script: React
+* 		Browser: Chrome (Version 121.0.6167.139)
+* 		Test using desktop browser
+
+Out:
+
+* 		We will not be testing the “Download”, “View of GitHub”, “Blog” and Twitter(X) buttons
+* 		We also won’t be testing any other links from the page that are not part of the examples list/specified in out in scope section
+* 		We will not be testing on mobile devices
+* 		Keyboard navigation
+
+Features To Be Tested
+* 		Check status bar:
+* 		Status bar is hidden when there are no ToDo items in the system
+* 		Status bar displays "0 items left" when there are no items left
+* 		Status bar displays "1 item left" when there is 1 item left
+* 		Status bar displays "2 items left" when there are 2 items left
+* 		Status bar can filter ToDo items: toggle between Active, All and Completed
+* 		When there are any completed items, a "Clear completed" link appears in the status bar
+* 		When the "Clear completed" link is clicked, all completed items are deleted
+* 		Clicking the down arrow symbol next to the "What needs to be done?" box will toggle all items to Completed or Not Completed
+
+As well as testing within each individual to-do list application, we want to test the behaviour across the different variants:
+* 		ToDo items from one variant do not "bleed over" into other applications (e.g if you create a ToDo item in the React version, it is not visible in the Vue.js version)
+* 		The master list of ToDo items is stored in the browser's local storage, with the key name "todos-<version>" (e.g. todos-react for the React version). This key contains a comma-separated list of all the UUIDs for the ToDo items.
+* 		Each individual ToDo item has its own entry in local storage, for instance if todos-react says that there is a ToDo item with UUID b3a592f9-fbfb-6461-4eef-fba1274b5868 then there will be a corresponding key todos-react-b3a592f9-fbfb-6461-4eef-fba1274b5868 containing a JSON representation of that ToDo item.
+An example of the desired JSON data for an individual ToDo item can be found below:
+
+[Time block of 30 mins, longer if but reporting needed.]
+
+Notes:
+
+Status bar is only visible when there are items in the todo list.
+Status bar does display 0 items left correctly
+Status bar does display 1 item left correctly
+Status bar does display 2 items left correctly
+Status filters all work correctly.
+Clear completed link is displayed regardless of whether any items are completely but does work as expected.
+Clearing all items works correctly
+Arrow beside test input box will mark each item as completed on uncompleted regardless of previous state of that item.
+
+Items do not bleed over but are also not saved on the same variant either. 
+Reloading the page will delete all todo list entries
+
+Bug found in the local storage of the webpage:
+Data is not locally stored and an error message can be found in the “inspect menu”:
+“<label for=FORM_ELEMENT>” 
+
+Last test listed above cannot be carried out as we cannot get to the UUID when the id value is invalid on the browser.
