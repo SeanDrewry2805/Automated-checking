@@ -1,0 +1,11 @@
+Our findings:
+
+After running the listed tests for the variant “React” on the chrome browser, we uncovered some unexpected bugs and results. Initially, some of the input related tests came up with errors such as entering a single character or certain special characters and therefore this was not working as expected. We logged these as bugs for the rest of the team to address in the morning. These bugs may be lower priority but still need to be addressed. Most of the remaining testing was successful and generally proves that the navigation and interaction with this variant was fully functional. However, upon further inspection and reloading the page, we encountered a more serious bug with a high severity that should be addressed as soon as possible. In short, the local storage for the browser was not functional and all todo list items are removed upon reloading or exiting the page. More details on this bug are contained within the bug report. 
+
+We gave ourselves extra time for logging bugs or issues since we imagined that 1 hour would not be enough for testing and logging. However, we managed to address each test required and make notes/report bugs in the given time. This bodes well for future testing of different variants. More buggy variants may require more time but this has been accounted for with contingency time. 
+
+Once the high priority bug has been address and/or fixed, we can go back and retest to see if the functionality has improved enough to reach the final listed test. 
+
+Aside from the few bugs we discovered, this test run was mostly successful with expected results across most parts of the variant.
+
+
