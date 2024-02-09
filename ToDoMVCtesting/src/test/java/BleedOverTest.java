@@ -28,7 +28,7 @@ public class BleedOverTest {
         toDoInput.click();
         toDoInput.sendKeys("Make a cup of tea" + Keys.ENTER);
         takeScreenshot(driver, "checkToDoForTea.png");
-        WebElement findCupOfTea = driver.findElement(By.xpath("/html/body/app-root/section/app-todo-list/main/ul/app-todo-item/li/div/label"));
+        WebElement findCupOfTea = driver.findElement(By.xpath("//label[contains(text(), 'Make a cup of tea')]"));
         Assertions.assertEquals("Make a cup of tea", findCupOfTea.getText());
         driver.navigate().back();
         WebElement findVuejs = driver.findElement(By.cssSelector(".js-app-list:nth-child(1) li:nth-child(3) .link"));
