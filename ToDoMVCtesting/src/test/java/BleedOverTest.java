@@ -27,14 +27,14 @@ public class BleedOverTest {
         WebElement toDoInput = driver.findElement(By.cssSelector(".new-todo"));
         toDoInput.click();
         toDoInput.sendKeys("Make a cup of tea" + Keys.ENTER);
-        takeScreenshot(driver, "checkToDoForTea.png");
+        takeScreenshot(driver, "screenshots/checkToDoForTea.png");
         WebElement findCupOfTea = driver.findElement(By.xpath("//label[contains(text(), 'Make a cup of tea')]"));
         Assertions.assertEquals("Make a cup of tea", findCupOfTea.getText());
         driver.navigate().back();
         WebElement findVuejs = driver.findElement(By.cssSelector(".js-app-list:nth-child(1) li:nth-child(3) .link"));
         findVuejs.click();
         Assertions.assertEquals("https://todomvc.com/examples/vue/dist/#/" , driver.getCurrentUrl());
-        takeScreenshot(driver, "checkToDoForNoTea.png");
+        takeScreenshot(driver, "screenshots/checkToDoForNoTea.png");
         boolean NoItems = !driver.findElements(By.xpath("/html/body/section/main/ul")).isEmpty();
         Assertions.assertTrue(NoItems);
         //this could be easy to break but currently as there are no id's on here this is the safest way we know how to test (there may be better ways)
