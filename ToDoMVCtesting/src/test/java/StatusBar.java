@@ -19,7 +19,6 @@ public class StatusBar {
     }
 
     // Your tests will go here!
-    //span[@class='todo-count']
     @Test
     void CheckingNumberOfItems() {
         driver.get("https://todomvc.com/examples/angular/dist/browser/#/all");
